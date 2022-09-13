@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainpage',
+    'usuario',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # a URLS olha a VIEWS que olha os HTMLs
+# views são criadas de acordo com as models também
