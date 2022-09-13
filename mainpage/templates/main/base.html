@@ -19,17 +19,20 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="/">Início</a></li>
+                <li><a href="{% url 'home' %}">Início</a></li>
                 <li><a href="/">Produtos</a></li>
                 <li><a href="/">Planos e Assinaturas</a></li>
-                <li><a href="/">Sobre Nós</a></li>
+                <li><a href="{% url 'sobrenos' %}">Sobre Nós</a></li>
                 <li><a href="/">Entrar</a></li>
                 <li><a href="/">Cadastrar-se</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="main-content">
+        {% block content %}
+        
+        {% endblock content %}
+        <!-- <div class="main-content">
             <div class="slides">
                 <input type="radio" name="slide" id="slide1" checked>
                 <input type="radio" name="slide" id="slide2">
@@ -60,10 +63,9 @@
                     <label class="bar" for="slide3"></label>
                     <label class="bar" for="slide4"></label>
                     <label class="bar" for="slide5"></label>
-
                 </div>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->

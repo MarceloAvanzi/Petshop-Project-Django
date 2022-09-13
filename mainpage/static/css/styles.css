@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+/* toda a nav bar */
+
 a {
     color: #fff;
     text-decoration: none;
@@ -32,11 +34,6 @@ main {
     center center;
     background-size: cover;
     height: 92vh;
-}
-
-.slides input{
-    height: 46vh;
-
 }
 
 .nav-list {
@@ -78,6 +75,7 @@ main {
         justify-content: space-around;
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
+        z-index: 2;
     }
     .nav-list li {
         margin-left: 0;
@@ -114,6 +112,8 @@ main {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
+/* Slide na pagina index */
+
 .main-content {
     height: 520px;
     width: 935px;
@@ -122,8 +122,9 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-40%);
+    transform: translate(-50%,-45%);
     box-shadow: 20px 10px 10px black;
+    z-index: 1;
 }
 
 .navigation {
@@ -136,7 +137,7 @@ main {
 
 .bar {
     width: 70px;
-    height: 17px;
+    height: 10px;
     border: 2px solid #fff;
     margin: 6px;
     border-radius: 5px;
@@ -186,4 +187,31 @@ input[type="radio"] {
 
 #slide5:checked ~ .s1 {
     margin-left: -80%;
+}
+
+/* sobrenos */
+
+.sobrenos {
+    width: 700px;
+    height: 300px;
+    border: 2px solid #23232e;
+    position: absolute;
+    top: 30%;
+    left: 27%;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+}
+
+.sobrenos span {
+    position: absolute;
+    margin-left: 5%;
+    top: 5%;
+    right: 5%;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, system-ui;
+    font-size: larger;
+    line-height: 1.8em;
+    font-weight: lighter;
+    text-align: justify;
 }
