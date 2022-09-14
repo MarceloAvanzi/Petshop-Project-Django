@@ -215,3 +215,22 @@ input[type="radio"] {
     font-weight: lighter;
     text-align: justify;
 }
+
+/* cadastrar-se */
+
+.cadastrar {
+    width: 1450px;
+    height: 500px;
+    border: 2px solid #23232e;
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+}
+
+.cadastrar table {
+    color: #fff;
+    text-align: justify;
+}

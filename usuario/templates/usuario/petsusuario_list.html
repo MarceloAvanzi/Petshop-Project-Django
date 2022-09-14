@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="cadastrar">
+    <label>
+        <a href="{% url 'usuario.cadastrarpet' %}">Cadastrar Pet</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Raça</th>
+                    <th>Porte</th>
+                    <th>Idade</th>
+                    <th>Ativa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pet in object_list %}
+                    <tr>
+                        <td>{{ pet.Nome }}</td>
+                        <td>{{ pet.Raça }}</td>
+                        <td>{{ pet.Porte }}</td>
+                        <td>{{ pet.Idade }}</td>
+                        <td>{% if pet.Ativa %}
+                            Sim
+                            {% else %}
+                            Não
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </label>
+</div>
+{% endblock content %}

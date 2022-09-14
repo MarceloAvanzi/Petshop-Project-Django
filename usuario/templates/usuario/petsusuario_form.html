@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="cadastrar">
+    <label>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit"></input>
+        </form>
+    </label>
+</div>
+{% endblock content %}
