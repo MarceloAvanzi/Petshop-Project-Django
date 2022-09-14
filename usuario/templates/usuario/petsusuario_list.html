@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="cadastrar">
+<div class="lista-pet">
     <label>
         <a href="{% url 'usuario.cadastrarpet' %}">Cadastrar Pet</a>
         <table>
@@ -16,11 +16,11 @@
             <tbody>
                 {% for pet in object_list %}
                     <tr>
-                        <td>{{ pet.Nome }}</td>
-                        <td>{{ pet.Raça }}</td>
-                        <td>{{ pet.Porte }}</td>
-                        <td>{{ pet.Idade }}</td>
-                        <td>{% if pet.Ativa %}
+                        <td>{{ pet.nome_completo }}</td>
+                        <td>{{ pet.raça }}</td>
+                        <td>{{ pet.porte }}</td>
+                        <td>{{ pet.idade }} Anos</td>
+                        <td>{% if pet.ativa %}
                             Sim
                             {% else %}
                             Não
