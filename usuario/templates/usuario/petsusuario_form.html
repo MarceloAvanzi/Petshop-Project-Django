@@ -3,22 +3,25 @@
 <div class="cadastrar-pet">
         <form method="post">
             {% csrf_token %}
-            <label for="name_completo">Nome Completo: </label>
+
+            {{form.as_p}}
+            <!-- oq exatamente o form.as_p faz \/ 
+                <label for="id_name_completo">Nome Completo: </label>
             <input type="text"  name="nome_completo" maxlength="256" required="" id="id_nome_completo" autofocus><p></p></input>
 
-            <label for="raça">Raça: </label>
+            <label for="id_raça">Raça: </label>
             <input type="text" name="raça" maxlength="256" required="" id="id_raça"><p></p></input>
 
-            <label for="porte">Porte: </label>
+            <label for="id_porte">Porte: </label>
             <input type="text" name="porte" maxlength="256" required="" id="id_porte" placeholder="Grande, médio, pequeno"><p></p></input>
 
-            <label for="idade">Idade: </label>
+            <label for="id_idade">Idade: </label>
             <input type="number" name="idade" required="" id="id_idade" min="0"><p></p></input>
 
-            <label for="ativa">Ativo: </label>
-            <input type="checkbox" name="ativa" id="id_ativa" checked=""><p></p></input>
+            <label for="id_ativa">Ativo: </label>
+            <input type="checkbox" name="ativa" id="id_ativa" checked=""><p></p></input> -->
             
-            <input type="submit"></input>
+            <input type="submit" value="Salvar"></input>
         </form>
 </div>
 {% endblock content %}

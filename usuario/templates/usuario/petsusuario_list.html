@@ -3,6 +3,10 @@
 <div class="lista-pet">
     <label>
         <a href="{% url 'usuario.cadastrarpet' %}">Cadastrar Pet</a>
+        <form method="GET">
+            <input type="text" name="filtronome" placeholder="Buscar por nome"/>
+            <input type="submit" value="Buscar"/>
+        </form>
         <table>
             <thead>
                 <tr>
@@ -11,6 +15,7 @@
                     <th>Porte</th>
                     <th>Idade</th>
                     <th>Ativa</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +30,12 @@
                             {% else %}
                             Não
                             {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'usuario.editarpet' pet.pk %}"><i>Editar</i></a>
+                        </td>
+                        <td>
+                            <a href="{% url 'usuario.deletarpet' pet.pk %}"><i>Deletar</i></a>
                         </td>
                     </tr>
                 {% endfor %}
