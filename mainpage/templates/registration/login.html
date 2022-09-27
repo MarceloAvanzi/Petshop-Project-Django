@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="lista-pet">
+    <label>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="OK">
+        </form>
+        <p class="text-center">Não possui conta?
+            <a href="{% url 'registrar' %}">Cadastre-se
+        </p>
+    </label>
+</div>
+{% endblock content %}

@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainpage.urls')), #url index por isso vazio
-    path('usuario/', include('usuario.urls')) 
+    path('usuario/', include('usuario.urls')),
+    path('accounts/', include('django.contrib.auth.urls')) #url do proprio django para fazer o sistema de autenticação
 ]

@@ -12,7 +12,7 @@ class ListaUsuarios(ListView):
     #Aplicar filtros na busca
     def get_queryset(self):
         queryset =  super().get_queryset()
-        #queryset = queryset.filter(usuario=self.request.user)
+        queryset = queryset.filter(usuariologado=self.request.user)
         filtro_nome = self.request.GET.get('filtronome') or None
         if filtro_nome:
             queryset = queryset.filter(nome_completo__contains=filtro_nome)
@@ -23,6 +23,10 @@ class CadastrarUsuario(CreateView): #CadastrarPet
     model = Usuario
     form_class = UsuarioForm
     success_url = '/usuario/'
+
+    def form_valid(self, form):
+        form.instance.usuariologado = self.request.user
+        return super().form_valid(form)
 
 class EditarUsuario(UpdateView): #EditarPet
     model = Usuario

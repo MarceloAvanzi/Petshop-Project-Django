@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from telnetlib import LOGOUT
 from dotenv import load_dotenv
 import os
 
@@ -128,6 +129,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGOUT_REDIRECT_URL = '/'
 
 # a URLS olha a VIEWS que olha os HTMLs
 # views são criadas de acordo com as models também
