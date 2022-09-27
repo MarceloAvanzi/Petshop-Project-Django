@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="lista-pet">
+    <label>
+        <form method="GET">
+            <input type="text" name="nome" placeholder="Buscar por nome"/>
+            <input type="submit" value="Buscar"/>
+        </form>
+        <a href="{% url 'pets.cadastrarpet' pk_usuario %}">Novo</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Raça</th>
+                    <th>Porte</th>
+                    <th>Idade</th>
+                    <th>Ativa</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pet in MeusPets %}
+                    <tr>
+                        <td>{{ pet.nome }}</td>
+                        <td>{{ pet.raça }}</td>
+                        <td>{{ pet.porte }}</td>
+                        <td>{{ pet.idade }} Anos</td>
+                        <td>{% if pet.ativa %}
+                            Sim
+                            {% else %}
+                            Não
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'pets.editarpet' pk_usuario pet.pk %}">Editar</a>
+                            <a href="{% url 'pets.deletarpet' pk_usuario pet.pk %}">Remover</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </label>
+</div>
+{% endblock content %}

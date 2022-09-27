@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="cadastrar-pet">
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Salvar"></input>
+        </form>
+</div>
+{% endblock content %}

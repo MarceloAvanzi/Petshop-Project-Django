@@ -1,4 +1,3 @@
-import email
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -13,12 +12,23 @@ from django.contrib.auth.models import User
 #     def __str__(self) -> str:
 #         return self.nome_completo
 
-class PetsUsuario(models.Model):
+class Usuario(models.Model): #PetsUsuario
     nome_completo = models.CharField(max_length=256)
-    raça = models.CharField(max_length=256)
-    porte = models.CharField(max_length=256)
+    email = models.EmailField(max_length=256)
+    celular = models.CharField(max_length=256)
     idade = models.IntegerField()
     ativa = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return self.nome_completo
+
+class Pets(models.Model): #Contato
+    nome = models.CharField(max_length=256)
+    raça = models.CharField(max_length=256)
+    porte = models.CharField(max_length=256)
+    idade = models.IntegerField()
+    ativa = models.BooleanField(default=True)
+    pessoa = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.nome

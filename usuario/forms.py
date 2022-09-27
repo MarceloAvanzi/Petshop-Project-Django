@@ -1,9 +1,16 @@
 from dataclasses import fields
 from pyexpat import model
+from django import forms
 from django.forms import ModelForm
-from .models import PetsUsuario
+from .models import Usuario, Pets
 
-class PetForm(ModelForm):
+class UsuarioForm(ModelForm): #PetForm
+    #celular = forms.
     class Meta:
-        model = PetsUsuario
-        fields = ['nome_completo','raça','porte','idade','ativa']
+        model = Usuario
+        fields = ['nome_completo','email','celular','idade','ativa']
+
+class MeuPetForm(ModelForm):
+    class Meta:
+        model = Pets
+        fields =['nome','raça','porte','idade','ativa']
