@@ -2,7 +2,8 @@
 {% block content %}
 <div class="lista-pet">
     <label>
-        <a href="{% url 'usuario.cadastrarusuario' %}">Cadastrar Novo</a>
+        <a href="{% url 'pet.cadastrarusuario' %}">Cadastrar Novo</a>
+        <h3>Bem vindo {{user.first_name}} {{user.last_name}}</h3>
         <form method="GET">
             <input type="text" name="filtronome" placeholder="Buscar por nome"/>
             <input type="submit" value="Buscar"/>
@@ -11,30 +12,30 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Celular</th>
+                    <th>Raça</th>
+                    <th>Porte</th>
                     <th>Idade</th>
                     <th>Ativa</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                {% for usuario in object_list %}
+                {% for pet in object_list %}
                     <tr>
-                        <td>{{ usuario.nome_completo }}</td>
-                        <td>{{ usuario.email }}</td>
-                        <td>{{ usuario.celular }}</td>
-                        <td>{{ usuario.idade }} Anos</td>
-                        <td>{% if usuario.ativa %}
+                        <td>{{ pet.nome }}</td>
+                        <td>{{ pet.raça }}</td>
+                        <td>{{ pet.porte }}</td>
+                        <td>{{ pet.idade }} Anos</td>
+                        <td>{% if pet.ativa %}
                             Sim
                             {% else %}
                             Não
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{% url 'usuario.editarusuario' usuario.pk %}"><i>Editar</i></a>
-                            <a href="{% url 'usuario.deletarusuario' usuario.pk %}"><i>Deletar</i></a>
-                            <a href="{% url 'usuario.meuspets' usuario.pk %}"><i>Contatos</i></a>
+                            <a href="{% url 'pet.editarusuario' pet.pk %}"><i>Editar</i></a>
+                            <a href="{% url 'pet.deletarusuario' pet.pk %}"><i>Deletar</i></a>
+                            {% comment %} <a href="{% url 'pet.meuspets' pet.pk %}"><i>Contatos</i></a> {% endcomment %}
                         </td>
                     </tr>
                 {% endfor %}

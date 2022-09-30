@@ -14,23 +14,33 @@ from django.contrib.auth.models import User
 #         return self.nome_completo
 
 class Usuario(models.Model): #PetsUsuario
-    nome_completo = models.CharField(max_length=256)
-    email = models.EmailField(max_length=256)
-    celular = models.CharField(max_length=256)
-    idade = models.IntegerField()
-    ativa = models.BooleanField(default=True)
-    usuariologado = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-
-    def __str__(self) -> str:
-        return self.nome_completo
-
-class Pets(models.Model): #Contato
     nome = models.CharField(max_length=256)
     raça = models.CharField(max_length=256)
     porte = models.CharField(max_length=256)
     idade = models.IntegerField()
     ativa = models.BooleanField(default=True)
-    pessoa = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuariologado = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.nome
+
+
+
+
+
+
+
+
+
+
+
+# class Pets(models.Model): #Contato
+#     nome = models.CharField(max_length=256)
+#     raça = models.CharField(max_length=256)
+#     porte = models.CharField(max_length=256)
+#     idade = models.IntegerField()
+#     ativa = models.BooleanField(default=True)
+#     pessoa = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+
+#     def __str__(self) -> str:
+#         return self.nome

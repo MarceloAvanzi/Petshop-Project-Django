@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from usuario.models import Pets, Usuario
+from usuario.models import Usuario
 
 # Register your models here.
 @admin.action(description='Ativar pessoas selecionadas')
@@ -13,9 +13,9 @@ def desativar_todos(modeladmin, request, queryset):
 
 class pessoaAdmin(admin.ModelAdmin):
     list_display = [
-        'nome_completo',
-        'email',
-        'celular',
+        'nome',
+        'raça',
+        'porte',
         'idade',
         'ativa'
     ]
@@ -23,7 +23,7 @@ class pessoaAdmin(admin.ModelAdmin):
         'ativa'
     ]
     search_fields = [
-        'nome_completo'
+        'nome'
     ]
     actions = [
         ativar_todos,
@@ -31,4 +31,4 @@ class pessoaAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Usuario, pessoaAdmin)
-admin.site.register(Pets)
+# admin.site.register(Pets)
