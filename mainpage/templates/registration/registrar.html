@@ -1,16 +1,54 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="lista-pet">
+<div class="cadastro-usuario">
     <label>
-        <div class="">
-            <h1>Cadastre-se</h1>
+        <div type="cadastrotudo">
+            <h1 type="cadastrartitulo">Cadastre-se</h1>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                {% comment %} {{ form.as_p }} {% endcomment %}
+
+                <label type="linha1" for="id_nome">Nome:</label>
+                <label type="linha2apelido" for="id_apelido">Apelido:</label>
+                <p>
+                    <input type="text" name="nome" maxlength="256" required id="id_nome">
+                    <input type="text" name="apelido" maxlength="256" required id="id_apelido">
+                </p>
+
+                <label type="linha1" for="id_emailfield">E-mail:</label>
+                <label type="linha2celular" for="id_celular">Celular:</label>
+                <p>
+                    <input type="email" name="emailfield" maxlength="254" required id="id_emailfield">
+                    <input type="text" name="celular" maxlength="256" required id="id_celular">
+                </p>
+
+                <label type="linha1" for="id_cpf">CPF:</label>
+                <label type="linha2nasc" for="id_data_nascimento">Data de Nascimento:</label>
+                <p>
+                    <input type="text" name="cpf" maxlength="14" required id="id_cpf">
+                    <input type="date" name="data_nascimento" required id="id_data_nascimento">
+                </p>
+
+                <label type="linha1" for="id_password1">Senha:</label>
+                <div class="tooltip"> Info
+                    
+                    <span class="tooltiptext">
+                            <p>Your password can’t be too similar to your other personal information.</p>
+                            <p>Your password must contain at least 8 characters.</p>
+                            <p>Your password can’t be a commonly used password.</p>
+                            <p>Your password can’t be entirely numeric.</p>
+                    </span>
+                </div>
+                <label type="linha2password" for="id_password2">Confirmação de Senha:</label>
+                <p>
+                    <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                </p>
+
+                <button type="submit">Cadastrar</button>
             </form>
-            <p class="text-center">Já possui conta? 
-                <a href="/accounts/login">Entrar</a>.
+            <p type="textentrar">Já possui conta? 
+                <a href="/accounts/login">Entrar</a>
             </p>
         </div>
     </label>

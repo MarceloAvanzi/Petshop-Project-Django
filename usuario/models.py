@@ -19,7 +19,7 @@ class Usuario(models.Model): #PetsUsuario
     porte = models.CharField(max_length=256)
     idade = models.IntegerField()
     ativa = models.BooleanField(default=True)
-    usuariologado = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuariologado = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.nome

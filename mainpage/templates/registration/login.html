@@ -1,15 +1,26 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="lista-pet">
-    <label>
+<div class="login">
+    <div type="logintudo">
         <form method="POST">
             {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="OK">
+            {% comment %} {{form.as_p}} {% endcomment %}
+
+            <label type="title" for="id_username">Email:</label>
+            <p>
+                <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+            </p>
+            <label type="title" for="id_password">Password:</label>
+            <p>
+                <input type="password" name="password" autocomplete="current-password" required id="id_password">
+            </p>
+
+            <input type="submit" value="Entrar">
         </form>
-        <p class="text-center">Não possui conta?
-            <a href="{% url 'registrar' %}">Cadastre-se
+        <p>
+            <label type="title" for="id_username">Não possui conta?</label>
+            <a type="titlecadastrar" href="{% url 'registrar' %}">Cadastre-se
         </p>
-    </label>
+    </div>
 </div>
 {% endblock content %}

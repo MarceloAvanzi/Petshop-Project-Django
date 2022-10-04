@@ -2,11 +2,15 @@
 {% block content %}
 <div class="lista-pet">
     <label>
-        <a href="{% url 'pet.cadastrarusuario' %}">Cadastrar Novo</a>
-        <h3>Bem vindo {{user.first_name}} {{user.last_name}}</h3>
+        <a type="bemvindo">Bem vindo {{user.first_name}} {{user.last_name}}</a>
+        <p>
+            <a type="editarperfil" href="/usuario">Editar Perfil</a>
+            <a type="agendarhorario" href="/usuario">Agendar horário</a>
+        </p>
         <form method="GET">
-            <input type="text" name="filtronome" placeholder="Buscar por nome"/>
+            <input type="text" name="filtronome" placeholder=" Buscar por nome"/>
             <input type="submit" value="Buscar"/>
+            <a type="cadastrar" href="{% url 'pet.cadastrarusuario' %}">Cadastrar Novo Pet</a>
         </form>
         <table>
             <thead>

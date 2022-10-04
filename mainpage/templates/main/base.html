@@ -27,10 +27,9 @@
                     <li><a href="{% url 'usuario.home' %}">Meu Perfil</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 {% else %}
-                    <li><a href="{% url 'registrar' %}"">Cadastrar-se</a></li>
+                    <li><a href="{% url 'registrar' %}">Cadastrar-se</a></li>
                     <li><a href="{% url 'usuario.home' %}">Entrar</a></li>
                 {% endif %}
-                
             </ul>
         </nav>
     </header>
