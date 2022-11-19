@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import ListView,CreateView,UpdateView,DeleteView
+from django.views.generic import ListView,CreateView,UpdateView,DeleteView, TemplateView
 from .models import Usuario
-from .forms import PetForm
+from .forms import PetForm,FormAgendamento
 
 class ListaPets(ListView):
     model = Usuario
@@ -37,8 +37,20 @@ class DeletarPet(DeleteView): #DeletarPet
     model = Usuario
     success_url = '/usuario/'
 
+# Pagina de Agendar horario
+
+def AgendarHorario(request):
+    model = Usuario.objects.all().order_by('nome')
+    return render(request, 'agendar/agendarhorario.html', {'pet': model})
 
 
+
+#nao funcionou o form.as_p dessa bagaça
+
+def AgendamentoView(request):
+    forms = FormAgendamento()
+    context = {'forms': forms}
+    return render(request,"agendar/agendarhorario.html",{'forms': forms})
 
 
 

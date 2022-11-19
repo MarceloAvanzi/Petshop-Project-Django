@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="lista-pet">
+    <label>
+        <a type="bemvindo">Escolha o melhor horário para você</a>
+        <p>
+            <a type="editarperfil" href="/usuario">Voltar</a>
+            <a type="agendarhorario" href="{% url 'agendarhorario' %}">Finalizar</a>
+        </p>
+
+        <p>
+            <label>Selecione seu doguinho :)<label>
+                
+                <select name="pet">
+                    {% for pet in pet %}
+                    <option value="{{ pet.nome }}">{{ pet.nome }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </p>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{forms.as_p}}
+            
+            <input type="submit" value="Salvar"></input>
+        </form>
+</div>
+{% endblock content %}

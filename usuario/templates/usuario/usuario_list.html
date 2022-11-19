@@ -5,12 +5,12 @@
         <a type="bemvindo">Bem vindo {{user.first_name}} {{user.last_name}}</a>
         <p>
             <a type="editarperfil" href="/usuario">Editar Perfil</a>
-            <a type="agendarhorario" href="/usuario">Agendar horário</a>
+            <a type="agendarhorario" href="{% url 'agendarhorario' %}">Agendar horário</a>
         </p>
         <form method="GET">
             <input type="text" name="filtronome" placeholder=" Buscar por nome"/>
             <input type="submit" value="Buscar"/>
-            <a type="cadastrar" href="{% url 'pet.cadastrarusuario' %}">Cadastrar Novo Pet</a>
+            <a type="cadastrar" href="{% url 'pet.cadastrarpet' %}">Cadastrar Novo Pet</a>
         </form>
         <table>
             <thead>
@@ -37,8 +37,8 @@
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{% url 'pet.editarusuario' pet.pk %}"><i>Editar</i></a>
-                            <a href="{% url 'pet.deletarusuario' pet.pk %}"><i>Deletar</i></a>
+                            <a href="{% url 'pet.editarpet' pet.pk %}"><i>Editar</i></a>
+                            <a href="{% url 'pet.deletarpet' pet.pk %}"><i>Deletar</i></a>
                             {% comment %} <a href="{% url 'pet.meuspets' pet.pk %}"><i>Contatos</i></a> {% endcomment %}
                         </td>
                     </tr>

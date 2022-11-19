@@ -24,10 +24,22 @@ class Usuario(models.Model): #PetsUsuario
     def __str__(self) -> str:
         return self.nome
 
+# variaveis que terão na pagina de agendamento
+class Agendamento(models.Model):
+    data = models.DateField()
+    horario = models.CharField(max_length=5)
+    banho = models.BooleanField(default=False, blank=False)
+    TOSAS = (
+        ('tosacompleta', ('Tosa Completa')),
+        ('tosahigienica', ('Tosa Higiênica')),
+        ('semtosa', ('Sem Tosa')),
+    )
+    tosa = models.BooleanField(choices=TOSAS ,default=False)
+    pulgas = models.BooleanField(default=False)
+    observacao = models.CharField(max_length=256)
 
-
-
-
+    def __str__(self) -> str:
+        return self.nome
 
 
 
