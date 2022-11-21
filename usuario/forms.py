@@ -1,7 +1,4 @@
-from dataclasses import fields
-from pyexpat import model
-from django import forms
-from django.forms import ModelForm
+from django.forms import DateField, ModelForm, TextInput
 from .models import Usuario,Agendamento
 
 class PetForm(ModelForm): #PetForm
@@ -11,6 +8,11 @@ class PetForm(ModelForm): #PetForm
 
 
 class FormAgendamento(ModelForm):
+    data = DateField(
+        widget=TextInput(
+            attrs = {"type": "date"}
+        )
+    )
     class Meta:
         model = Agendamento
         fields = ['data','horario','banho','tosa','pulgas','observacao']

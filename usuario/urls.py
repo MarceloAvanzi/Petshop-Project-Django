@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import EditarPet, ListaPets,CadastrarPet,DeletarPet,AgendarHorario
+from .views import EditarPet, ListaPets,CadastrarPet,DeletarPet,AgendamentoView
 from django.contrib.auth.decorators import login_required
 
 
@@ -8,7 +8,7 @@ urlpatterns = [
     path('cadastrarpet/',login_required(CadastrarPet.as_view()),name='pet.cadastrarpet'),
     path('<int:pk>/editarpet',login_required(EditarPet.as_view()),name='pet.editarpet'),
     path('<int:pk>/deletarpet',login_required(DeletarPet.as_view()),name='pet.deletarpet'),
-    path('agendarhorario/',login_required(AgendarHorario),name='agendarhorario'),
+    path('agendarhorario/',login_required(AgendamentoView),name='agendarhorario'),
 
 
     
