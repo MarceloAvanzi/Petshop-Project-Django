@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from usuario.models import Usuario
+from usuario.models import Usuario,Agendamento
 
 # Register your models here.
 @admin.action(description='Ativar pessoas selecionadas')
@@ -31,4 +31,4 @@ class pessoaAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Usuario, pessoaAdmin)
-# admin.site.register(Pets)
+admin.site.register(Agendamento)

@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.views.generic import ListView,CreateView,UpdateView,DeleteView, TemplateView
 from .models import Usuario
 from .forms import PetForm,FormAgendamento
+from django.contrib.auth.models import User
 
 class ListaPets(ListView):
     model = Usuario
@@ -38,10 +40,25 @@ class DeletarPet(DeleteView): #DeletarPet
 
 
 # Pagina de Agendar horario
-
+#cachorra nao ta pegando o id do usuario quando vai agendar a bosta do horario porra (mudar pra class talvez)
 def AgendamentoView(request):
-    form = FormAgendamento()
+    currrent_user = request.user
+    user_id = currrent_user.id
+
+    form = FormAgendamento(request.POST or None)
     model = Usuario.objects.all().order_by('nome')
+    user = User.objects.get(id=user_id)
+
+    if form.is_valid():
+        messages.success(request, "Agendamento realizado com sucesso!")
+        form.usuariologado = user
+        form.save()
+        # fs = form.save(commit=False)
+        # fs.usuariologado = user_id
+        # fs.save()
+        return redirect('/usuario/')
+
+    messages.error(request, "Falha ao agendar horário")
     return render(request,'agendar/agendarhorario.html',{'form': form,'pets': model})
 
 

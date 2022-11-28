@@ -34,12 +34,13 @@ class Agendamento(models.Model):
         ('tosahigienica', ('Tosa Higiênica')),
         ('semtosa', ('Sem Tosa')),
     )
-    tosa = models.BooleanField(choices=TOSAS ,default=False)
+    tosa = models.CharField(choices=TOSAS ,max_length=256)
     pulgas = models.BooleanField(default=False)
     observacao = models.CharField(max_length=256)
+    usuariologado = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return self.nome
+        return self.horario
 
 
 
