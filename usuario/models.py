@@ -38,6 +38,7 @@ class Agendamento(models.Model):
     pulgas = models.BooleanField(default=False)
     observacao = models.CharField(max_length=256)
     usuariologado = models.ForeignKey(User, on_delete=models.CASCADE)
+    pet = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.horario

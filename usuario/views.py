@@ -48,17 +48,19 @@ def AgendamentoView(request):
     form = FormAgendamento(request.POST or None)
     model = Usuario.objects.all().order_by('nome')
     user = User.objects.get(id=user_id)
+    # breakpoint()
 
     if form.is_valid():
         messages.success(request, "Agendamento realizado com sucesso!")
-        form.usuariologado = user
+        form.usuariologado = user_id
         form.save()
         # fs = form.save(commit=False)
         # fs.usuariologado = user_id
         # fs.save()
         return redirect('/usuario/')
-
-    messages.error(request, "Falha ao agendar horário")
+    else:   
+        messages.error(request, "Falha ao agendar horário")
+    
     return render(request,'agendar/agendarhorario.html',{'form': form,'pets': model})
 
 

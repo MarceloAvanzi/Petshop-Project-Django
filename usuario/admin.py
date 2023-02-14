@@ -30,5 +30,10 @@ class pessoaAdmin(admin.ModelAdmin):
         desativar_todos
     ]
 
+class agendamentoAdmin(admin.ModelAdmin):
+    list_display = [
+        'data','horario','banho','tosa','pulgas','observacao','usuariologado','pet'
+    ]
+
 admin.site.register(Usuario, pessoaAdmin)
-admin.site.register(Agendamento)
+admin.site.register(Agendamento, agendamentoAdmin)
