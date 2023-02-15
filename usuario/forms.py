@@ -15,12 +15,18 @@ class FormAgendamento(ModelForm):
     )
     class Meta:
         model = Agendamento
-        fields = ['data','horario','banho','tosa','pulgas','observacao','usuariologado','pet']
-    # def save(self, commit=True):
-    #     agendamento = super(FormAgendamento, self).save(commit=True)
-    #     if commit:
-    #         agendamento.save()
-    #     return agendamento
+        fields = ['data','horario','banho','tosa','pulgas','observacao','pet']
+
+
+
+
+
+
+
+
+
+
+
 
 # class MeuPetForm(ModelForm):
 #     class Meta:

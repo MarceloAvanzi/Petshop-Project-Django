@@ -30,9 +30,9 @@ class Agendamento(models.Model):
     horario = models.CharField(max_length=5)
     banho = models.BooleanField(default=False, blank=False)
     TOSAS = (
-        ('tosacompleta', ('Tosa Completa')),
-        ('tosahigienica', ('Tosa Higiênica')),
-        ('semtosa', ('Sem Tosa')),
+        ('Completa', ('Tosa Completa')),
+        ('Higienica', ('Tosa Higiênica')),
+        ('Não', ('Sem Tosa')),
     )
     tosa = models.CharField(choices=TOSAS ,max_length=256)
     pulgas = models.BooleanField(default=False)

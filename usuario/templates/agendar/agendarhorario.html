@@ -5,8 +5,45 @@
         <a type="bemvindo">Escolha o melhor horário para você</a>
         <p>
             <a type="editarperfil" href="/usuario">Voltar</a>
-            <a type="agendarhorario" href="{% url 'agendarhorario' %}">Finalizar</a>
+            <!-- <a type="agendarhorario" href="{% url 'agendarhorario' %}">Finalizar</a> -->
         </p>
+        <label>Seus Agendamentos</label>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Tosa</th>
+                    <th>Possui pulgas?</th>
+                    <th>Observação</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for agendamento in agendamentos %}
+                    <tr>
+                        <td>{{ agendamento.pet }}</td>
+                        <td>{{ agendamento.data }}</td>
+                        <td>{{ agendamento.horario }}</td>
+                        <td>{{ agendamento.tosa }}</td>
+                        <td>{% if agendamento.pulgas %}
+                            Sim
+                            {% else %}
+                            Não
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ agendamento.observacao }}
+                        </td>
+                        <td>
+                            <a href=""><i>Editar</i></a>
+                            <a href=""><i>Deletar</i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
         <p>
             <label>Selecione seu doguinho :)<label>
@@ -18,12 +55,14 @@
                 </select>
             </label>
         </p>
-        <form method="post">
-            {% csrf_token %}
 
-            {{form.as_p}}
-            
-            <input type="submit" value="Salvar"></input>
-        </form>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                
+                <input type="submit" value="Salvar"></input>
+            </form>
+        </div>
 </div>
 {% endblock content %}
