@@ -1,9 +1,6 @@
 This is the TODO list so I don't forget the next time I code this project
 
-1-Precisa adicionar as acoes nos botoes de editar e deletar na pagina de Agendamento
-1-fazer as verificações dos forms antes do usuario agendar um horario(horario, etc), da pra verificar dentro do if na views (form.is_valid)
-1-excluir checkbox de banho (pq é obvio q vai ser banho)
-1-Estilizar tambem
+1-Estilizar agendar horarios
 
 2-Adicionar acoes no botao editar perfil na pagina inicial do usuario
 2-estilizar tambem

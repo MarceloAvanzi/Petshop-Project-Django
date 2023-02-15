@@ -63,8 +63,14 @@ def AgendamentoView(request):
     
     return render(request,'agendar/agendarhorario.html',{'form': form,'pets': pets, 'agendamentos': agendamentos})
 
+class EditarAgendamento(UpdateView):
+    model = Agendamento
+    form_class = FormAgendamento
+    success_url = '/usuario/agendarhorario'
 
-
+class DeletarAgendamento(DeleteView):
+    model = Agendamento
+    success_url = '/usuario/agendarhorario'
 
 
 

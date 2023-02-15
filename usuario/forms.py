@@ -1,4 +1,5 @@
-from django.forms import DateField, ModelForm, TextInput
+import datetime
+from django.forms import DateField, ModelForm, TextInput, TimeField, TimeInput
 from .models import Usuario,Agendamento
 
 class PetForm(ModelForm): #PetForm
@@ -9,13 +10,23 @@ class PetForm(ModelForm): #PetForm
 
 class FormAgendamento(ModelForm):
     data = DateField(
+        initial=datetime.date.today,
         widget=TextInput(
             attrs = {"type": "date"}
         )
     )
+    horario = TimeField(
+        label='Hora',
+        widget=TimeInput(
+            format='%H:%M',
+            attrs={
+                'type': 'time',
+            }),
+        input_formats=('%H:%M',),
+    )
     class Meta:
         model = Agendamento
-        fields = ['data','horario','banho','tosa','pulgas','observacao','pet']
+        fields = ['pet','data','horario','tosa','pulgas','observacao']
 
 
 

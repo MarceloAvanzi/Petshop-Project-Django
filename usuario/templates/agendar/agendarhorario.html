@@ -33,12 +33,15 @@
                             Não
                             {% endif %}
                         </td>
-                        <td>
+                        <td>{% if agendamento.observacao == ''%}
+                            -
+                            {% else %}
                             {{ agendamento.observacao }}
+                            {% endif %}
                         </td>
                         <td>
-                            <a href=""><i>Editar</i></a>
-                            <a href=""><i>Deletar</i></a>
+                            <a href="{% url 'agendamento.editar' agendamento.pk %}"><i>Editar</i></a>
+                            <a href="{% url 'agendamento.deletar' agendamento.pk %}"><i>Deletar</i></a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -46,14 +49,14 @@
         </table>
 
         <p>
-            <label>Selecione seu doguinho :)<label>
+            {% comment %} <label>Selecione seu doguinho :)<label>
                 
                 <select name="pet">
                     {% for pet in pets %}
                     <option value="{{ pet.nome }}">{{ pet.nome }}</option>
                     {% endfor %}
                 </select>
-            </label>
+            </label> {% endcomment %}
         </p>
 
         <div>

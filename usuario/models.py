@@ -1,6 +1,9 @@
 from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
+
+from django.forms import ValidationError
 
 # class CadastroUsuario(models.Model):
 #     nome_completo = models.CharField(max_length=256, null=True) #campo tipo texto livre pra pessoa preencher
@@ -24,11 +27,14 @@ class Usuario(models.Model): #PetsUsuario
     def __str__(self) -> str:
         return self.nome
 
+def validate_date(data):
+    if (data < datetime.date.today()  ) :
+        raise ValidationError("Data não pode ser no passado")
+
 # variaveis que terão na pagina de agendamento
 class Agendamento(models.Model):
-    data = models.DateField()
-    horario = models.CharField(max_length=5)
-    banho = models.BooleanField(default=False, blank=False)
+    data = models.DateField(validators=[validate_date])
+    horario = models.TimeField()
     TOSAS = (
         ('Completa', ('Tosa Completa')),
         ('Higienica', ('Tosa Higiênica')),
@@ -36,12 +42,13 @@ class Agendamento(models.Model):
     )
     tosa = models.CharField(choices=TOSAS ,max_length=256)
     pulgas = models.BooleanField(default=False)
-    observacao = models.CharField(max_length=256)
+    observacao = models.CharField(max_length=256,blank=True)
     usuariologado = models.ForeignKey(User, on_delete=models.CASCADE)
     pet = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.horario
+
 
 
 

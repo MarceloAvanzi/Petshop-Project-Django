@@ -32,7 +32,7 @@ class pessoaAdmin(admin.ModelAdmin):
 
 class agendamentoAdmin(admin.ModelAdmin):
     list_display = [
-        'data','horario','banho','tosa','pulgas','observacao','usuariologado','pet'
+        'data','horario','tosa','pulgas','observacao','usuariologado','pet'
     ]
 
 admin.site.register(Usuario, pessoaAdmin)
