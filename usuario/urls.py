@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import EditarPet, ListaPets,CadastrarPet,DeletarPet,AgendamentoView, EditarAgendamento,DeletarAgendamento
+from mainpage import views
 from django.contrib.auth.decorators import login_required
 
 
@@ -11,6 +12,7 @@ urlpatterns = [
     path('agendarhorario/',login_required(AgendamentoView),name='agendarhorario'),
     path('<int:pk>/editaragendamento',login_required(EditarAgendamento.as_view()),name='agendamento.editar'),
     path('<int:pk>/deletaragendamento',login_required(DeletarAgendamento.as_view()),name='agendamento.deletar'),
+    path('<int:pk>/editarcadastro',login_required(views.EditarCadastro.as_view()),name='cadastro.editar'),
 
 
     

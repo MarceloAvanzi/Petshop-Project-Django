@@ -1,0 +1,11 @@
+{% block content %}
+<div class="cadastro-usuario">
+        <form method="post">
+            {% csrf_token %}
+
+            {{form.as_p}}
+            
+            <input type="submit" value="Salvar"></input>
+        </form>
+</div>
+{% endblock content %}

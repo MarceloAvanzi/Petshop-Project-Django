@@ -4,7 +4,7 @@
     <label>
         <a type="bemvindo">Bem vindo {{user.first_name}} {{user.last_name}}</a>
         <p>
-            <a type="editarperfil" href="/usuario">Editar Perfil</a>
+            <a type="editarperfil" href="{% url 'cadastro.editar' user.pk %}">Editar Perfil</a>
             <a type="agendarhorario" href="{% url 'agendarhorario' %}">Agendamentos</a>
         </p>
         <form method="GET">

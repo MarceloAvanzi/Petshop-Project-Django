@@ -1,8 +1,13 @@
 This is the TODO list so I don't forget the next time I code this project
 
-1-Estilizar agendar horarios
+1-Estilizar Pagina de Agendamentos
+1-Estilizar Pagina Meu perfil (alinhar o cadastrar novo pet)
+1-Estilizar editar e delete da lista de pet
+1-Estilizar editar e delete da lista de agendamentos
+1-Estilizar editar e delete da lista de agendamentos
+1-Estilizar pagina de Editar Perfil (não ta puxando o CSS)
 
-2-Adicionar acoes no botao editar perfil na pagina inicial do usuario
-2-estilizar tambem
 
-3-
+2-Criar App para pagina de Planos e Assinaturas
+
+3-Criar App para pagina de Produtos

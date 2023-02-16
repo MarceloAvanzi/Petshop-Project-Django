@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 from django.contrib.auth import login
+from django.views.generic import UpdateView
+from .models import UserLogin
 
 from mainpage.forms import NovoUsuarioForm
 
@@ -26,3 +28,8 @@ def Registrar(request):
     form = NovoUsuarioForm()
     context = {'form': form}
     return render(request, template_name='registration/registrar.html', context=context)
+
+class EditarCadastro(UpdateView):
+    model = UserLogin
+    form_class = NovoUsuarioForm
+    success_url = '/usuario/'
