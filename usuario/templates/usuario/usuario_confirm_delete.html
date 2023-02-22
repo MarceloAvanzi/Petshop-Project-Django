@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="sobrenos">
+<div class="deletar-pet">
     <form method="post">
         {% csrf_token %}
         <p>Você tem certeza que deseja remover "{{ object }}"?</p>

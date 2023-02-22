@@ -1,12 +1,11 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<div class="cadastrar-pet">
-        <form method="post">
-            {% csrf_token %}
-
-            {{form.as_p}}
-            
-            <input type="submit" value="Salvar"></input>
-        </form>
+<div class="agendamentoedeletar-pet">
+    <form method="post">
+        {% csrf_token %}
+        <p>Você tem certeza que deseja remover este agendamento?</p>
+        <input type="submit" value="Confirmar">
+        <a href="{% url 'usuario.home' %}">Cancelar</a>
+    </form>
 </div>
 {% endblock content %}

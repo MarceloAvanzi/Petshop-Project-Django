@@ -237,13 +237,14 @@ input[type="radio"] {
     text-align: center;
     font-size: 20px;
     border-collapse: collapse;
-    margin-left: 3.5%;
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 0.5%;
 }
 
 .lista-pet input[type=text] {
     border-radius: 5px;
-    margin-left: 3.5%;
+    margin-left: 3%;
     margin-top: 5%;
     width: 200px;
     height: 20px;
@@ -262,24 +263,24 @@ input[type="radio"] {
 }
 
 .lista-pet a[type=editarperfil] {
-    margin-left: 33%;
+    margin-left: 30%;
     font-size: 20px;
 }
 
 .lista-pet a[type=agendarhorario] {
-    margin-left: 8.8%;
+    margin-left: 11%;
     font-size: 20px;
 }
 
 .lista-pet a[type=cadastrar] {
-    margin-left: 43%;
+    margin-left: 30%;
     font-size: 20px;
 }
 
 .lista-pet a[type=bemvindo] {
     font-size: 30px;
     font-weight: bold;
-    margin-left: 31%;
+    margin-left: 27%;
 }
 
 .lista-pet a[type=bemvindo]:hover {
@@ -303,25 +304,305 @@ th{
 
 /* forms cadastrar pet */
 .cadastrar-pet {
-    width: 1450px;
-    height: 500px;
+    width: 35%;
+    height: 30%;
     border: 2px solid #23232e;
-    position: absolute;
-    top: 15%;
-    left: 3%;
     border-radius: 20px;
     box-shadow: 20px 10px 10px black;
     background-color: #23232e;
     color: #fff;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 32%;
+}
+
+.cadastrar-pet input[name=nome] {
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 4%;
+    width: 200px;
+    height: 20px;
+}
+.cadastrar-pet input[name=raça] {
+    border-radius: 5px;
+    margin-left: 3.8%;
+    margin-top: 2%;
+    width: 200px;
+    height: 20px;
+}
+.cadastrar-pet input[name=porte] {
+    border-radius: 5px;
+    margin-left: 3.3%;
+    margin-top: 2%;
+    width: 200px;
+    height: 20px;
+}
+
+.cadastrar-pet input[type=submit] {
+    border-radius: 5px;
+    margin-left: 31%;
+    margin-top: 3%;
+    width: 200px;
+    height: 20px;
+}
+.cadastrar-pet label {
+    border-radius: 5px;
+    margin-left: 24%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.cadastrar-pet input[type=number] {
+    border-radius: 5px;
+    margin-left: 3%;
+    margin-top: 1%;
+    width: 50px;
+    height: 20px;
 }
 
 .cadastrar-pet input{
     border-radius: 5px;
+    margin-left: 5%;
 }
 
 .cadastrar-pet input:hover {
     opacity: 0.8;
     transition: 0.2s;
+}
+
+.deletar-pet {
+    width: 30%;
+    height: 20%;
+    border: 2px solid #23232e;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+    color: #fff;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 35%;
+}
+
+.deletar-pet p{
+    border-radius: 5px;
+    margin-left: 13%;
+    margin-top: 8%;
+}
+.deletar-pet input{
+    border-radius: 5px;
+    margin-left: 32%;
+    margin-top: 5%;
+    width: 100px;
+    height: 20px;
+}
+.deletar-pet input:hover {
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.agendamento-pet {
+    width: 70%;
+    height: 60%;
+    border: 2px solid #23232e;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+    color: #fff;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.agendamento-pet select[name=pet] {
+    border-radius: 5px;
+    margin-left: 1.5%;
+    margin-top: 2.5%;
+    width: 200px;
+    height: 20px;
+}
+.agendamento-pet select[name=tosa] {
+    border-radius: 5px;
+    margin-left: 0.8%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.agendamento-pet input[type=date] {
+    border-radius: 5px;
+    margin-left: 0.4%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.agendamento-pet input[type=time] {
+    border-radius: 5px;
+    margin-left: 0.3%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.agendamento-pet input{
+    border-radius: 5px;
+    margin-left: 1%;
+}
+.agendamento-pet input[type=text] {
+    border-radius: 5px;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.agendamento-pet input[type=submit] {
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-top: 2%;
+    width: 200px;
+    height: 25px;
+}
+.agendamento-pet label[for=seusagendamentos] {
+    margin-left: 3%;
+}
+.agendamento-pet label[for=id_observacao] {
+    margin-left: 35.5%;
+}
+.agendamento-pet label {
+    margin-left: 38%;
+
+}
+
+.agendamento-pet table {
+    text-align: center;
+    font-size: 20px;
+    border-collapse: collapse;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 0.5%;
+}
+
+.agendamento-pet input:hover {
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+.agendamento-pet a[type=voltar] {
+    margin-left: 0%;
+    font-size: 20px;
+}
+
+.agendamento-pet a[type=titulo] {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: -10%;
+}
+
+.agendamento-pet tr:hover {
+    background: rgb(27, 65, 60);
+    transition: 0.2s;
+}
+
+.agendamentoeditar-pet {
+    width: 35%;
+    height: 35%;
+    border: 2px solid #23232e;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+    color: #fff;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 32%;
+}
+
+.agendamentoeditar-pet select[name=pet] {
+    border-radius: 5px;
+    margin-left: 5.5%;
+    margin-top: 4%;
+    width: 200px;
+    height: 20px;
+}
+.agendamentoeditar-pet select[name=tosa] {
+    border-radius: 5px;
+    margin-left: 3.9%;
+    margin-top: 2%;
+    width: 200px;
+    height: 20px;
+}
+.agendamentoeditar-pet input[type=date] {
+    border-radius: 5px;
+    margin-left: 3.2%;
+    margin-top: 2%;
+    width: 200px;
+    height: 20px;
+}
+
+.agendamentoeditar-pet input[type=time] {
+    border-radius: 5px;
+    margin-left: 3%;
+    margin-top: 2%;
+    width: 200px;
+    height: 20px;
+}
+.agendamentoeditar-pet label {
+    border-radius: 5px;
+    margin-left: 26%;
+    margin-top: 1%;
+    width: 200px;
+    height: 20px;
+}
+.agendamentoeditar-pet input[type=text] {
+    border-radius: 5px;
+    margin-left: 3%;
+    margin-top: 0%;
+    width: 150px;
+    height: 20px;
+}
+
+.agendamentoeditar-pet input[type=submit] {
+    border-radius: 5px;
+    margin-left: 32%;
+    margin-top: 2%;
+    width: 200px;
+    height: 25px;
+}
+
+.agendamentoeditar-pet input{
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+.agendamentoeditar-pet input:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.agendamentoedeletar-pet {
+    width: 30%;
+    height: 20%;
+    border: 2px solid #23232e;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+    color: #fff;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 35%;
+}
+
+.agendamentoedeletar-pet p{
+    border-radius: 5px;
+    margin-left: 16%;
+    margin-top: 6%;
+}
+.agendamentoedeletar-pet input{
+    border-radius: 5px;
+    margin-left: 32%;
+    margin-top: 5%;
+    width: 100px;
+    height: 20px;
+}
+.agendamentoedeletar-pet input:hover {
+    opacity: 0.8;
+    transition: 0.4s;
 }
 
 /* Tela de login */
