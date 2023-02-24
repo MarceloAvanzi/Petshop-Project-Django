@@ -873,3 +873,87 @@ font-size: larger;
     visibility: visible;
     opacity: 1;
 }
+
+.plans-all {
+    margin-top: 0%;
+}
+
+.plans-all section[type=plans-section] {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.plans-all div[type="plan"] {
+	background-color: #f2f2f2;
+	border: 10px solid #ddd;
+	box-shadow: 20px 10px 10px #000000;
+    border-radius: 20px;
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+	width: 300px;
+    margin-top: 5%;
+}
+
+.plans-all p[type="price"] {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.plans-all a[type="button"] {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.plans-all a[type="button"]:hover {
+    background-color: #555;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.plans-all ul[type="description1"] {
+	list-style: none;
+	text-align: left;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    margin-left: 8%;
+    font-size: smaller;
+}
+.plans-all ul[type="description2"] {
+	list-style: none;
+	text-align: left;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 8%;
+    font-size: smaller;
+}
+.plans-all ul[type="description3"] {
+	list-style: none;
+	text-align: left;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 8%;
+    font-size: smaller;
+}
+
+.plans-all ul[type="description1"] li {
+	margin-bottom: 4px;
+}
+.plans-all ul[type="description2"] li {
+	margin-bottom: 4px;
+}
+.plans-all ul[type="description3"] li {
+	margin-bottom: 4px;
+}

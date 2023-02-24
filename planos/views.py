@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def test(request):
-    return HttpResponse("Hello Geeks")
+    return render(request,'planos.html')
