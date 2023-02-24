@@ -1,8 +1,5 @@
 This is the TODO list so I don't forget the next time I code the project
 
-1-Estilizar pagina de Editar Perfil (não ta puxando o CSS)
-1-Estilizar cadastro do usuario
-
 
 2-Criar App para pagina de Planos e Assinaturas
 

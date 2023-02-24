@@ -21,7 +21,7 @@
             <ul class="nav-list">
                 <li><a href="{% url 'home' %}">Início</a></li>
                 <li><a href="/">Produtos</a></li>
-                <li><a href="/">Planos e Assinaturas</a></li>
+                <li><a href="{% url 'planos.home' %}">Planos e Assinaturas</a></li>
                 <li><a href="{% url 'sobrenos' %}">Sobre Nós</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'usuario.home' %}">Meu Perfil</a></li>

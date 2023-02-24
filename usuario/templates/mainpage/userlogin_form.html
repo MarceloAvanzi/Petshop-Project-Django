@@ -1,5 +1,7 @@
+{% extends 'main/base.html' %}
 {% block content %}
-<div class="cadastro-usuario">
+<div class="editar-perfil">
+    <div type="editar-perfil-tudo">
         <form method="post">
             {% csrf_token %}
 
@@ -7,5 +9,6 @@
             
             <input type="submit" value="Salvar"></input>
         </form>
+    </div>
 </div>
 {% endblock content %}

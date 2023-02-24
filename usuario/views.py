@@ -58,8 +58,6 @@ def AgendamentoView(request):
         fs.usuariologado = user_id
         fs.save()
         return redirect('/usuario/')
-    else:   
-        messages.error(request, "Falha ao agendar horário")
     
     return render(request,'agendar/agendarhorario.html',{'form': form,'pets': pets, 'agendamentos': agendamentos})
 

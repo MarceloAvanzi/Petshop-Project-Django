@@ -621,8 +621,8 @@ th{
 }
 
 .login div[type=logintudo] {
-    margin-top: 15%;
-    margin-left: 24%;
+    margin-top: 10%;
+    margin-left: 17%;
 }
 
 .login input[type=text] {
@@ -643,7 +643,7 @@ th{
     border-radius: 5px;
     width: 100px;
     height: 35px;
-    margin-left: 23%;
+    margin-left: 26%;
     margin-top: 1%;
 }
 
@@ -655,7 +655,7 @@ th{
 .login a[type=titlecadastrar] {
     border-radius: 5px;
     width: 200px;
-    margin-left: 19%;
+    margin-left: 21%;
 }
 
 /* tela de cadastro usuario */
@@ -674,8 +674,8 @@ th{
 }
 
 .cadastro-usuario div[type=cadastrotudo] {
-    margin-top: 10%;
-    margin-left: 13%;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .cadastro-usuario input {
@@ -713,20 +713,111 @@ th{
     border-radius: 5px;
     width: 100px;
     height: 35px;
-    margin-left: 37%;
-    margin-top: 1%;
+    margin-left: 39%;
+    margin-top: 2%;
 }
 
 .cadastro-usuario p[type=textentrar] {
-margin-left: 31%;
-margin-top: 2%;
+margin-left: 33%;
+margin-top: 1%;
 font-size: larger;
 }
 
+.editar-perfil {
+    width: 60%;
+    height: 70%;
+    border: 2px solid #23232e;
+    border-radius: 20px;
+    box-shadow: 20px 10px 10px black;
+    background-color: #23232e;
+    color: #fff;
+    position: absolute;
+    margin-top: 4.5%;
+    margin-left: 20%;
+}
 
-
-
-
+.editar-perfil div[type=editar-perfil-tudo]{
+    margin-top: 3%;
+}
+.editar-perfil input[name=nome]{
+    border-radius: 5px;
+    margin-left: 8.8%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=apelido]{
+    border-radius: 5px;
+    margin-left: 7.6%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=emailfield]{
+    border-radius: 5px;
+    margin-left: 8.8%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=celular]{
+    border-radius: 5px;
+    margin-left: 8.28%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=cpf]{
+    border-radius: 5px;
+    margin-left: 10.7%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=data_nascimento]{
+    border-radius: 5px;
+    margin-left: 0.8%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=password1]{
+    border-radius: 5px;
+    margin-left: 6.5%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[name=password2]{
+    border-radius: 5px;
+    margin-left: 2.4%;
+    margin-top: 1%;
+    width: 250px;
+    height: 25px;
+}
+.editar-perfil input[type=submit]{
+    border-radius: 5px;
+    margin-left: 37%;
+    margin-top: 3%;
+    width: 200px;
+    height: 25px;
+}
+.editar-perfil label{
+    margin-left: 27%;
+    margin-top: 0%;
+}
+.editar-perfil label[for=id_password2]{
+    margin-left: 21%;
+    margin-top: 0%;
+}
+.editar-perfil li{
+    margin-left: 30%;
+    margin-top: 0%;
+}
+.helptext{
+    margin-left: 27%;
+    margin-top: 0%;
+}
 
 
 
