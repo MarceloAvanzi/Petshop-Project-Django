@@ -3,16 +3,6 @@ This is the TODO list so I don't forget the next time I code the project
 
 2-pagina de Planos e Assinaturas
 2-fazer as paginas de assinatura
-2-fazer a API de pagamento (ver qual melhor plataforma
-    Recomendo usar uma empresa intermediária. Facilita MUITO as coisas e
-    te permite cobrar facilmente com cartão de crédito. A minha preferida
-    é:
-    www.moip.com.br
-    Mas tem outras:
-    www.f2b.com.br
-    www.pagseguro.com.br
-    www.pagamentodigital.com.br
-    www.sendep.com.br
+2-fazer a API de pagamento (fazer pela pagarme
+    https://docs.pagar.me/v3/docs/overview-checkout
 )
-
-3-Criar App para pagina de Produtos
