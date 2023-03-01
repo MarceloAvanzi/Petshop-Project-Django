@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<body>
+    <button id="pay-button">Abrir modal de pagamento</button>
+
+    <script>
+        var button = document.querySelector('button');
+
+        // Abrir o modal ao clicar no botão
+        button.addEventListener('click', function () {
+
+            // inicia a instância do checkout
+            var checkout = new PagarMeCheckout.Checkout({
+                encryption_key: 'SUA ENCRYPTION KEY',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+                close: function () {
+                    console.log('The modal has been closed.');
+                }
+            });
+
+            checkout.open({
+                amount: 1000,
+                customerData: 'true',
+                createToken: 'true',
+                items: [{
+                    id: '1',
+                    title: 'ebook',
+                    unit_price: 1500,
+                    quantity: 1,
+                    tangible: 'false'
+                }]
+            })
+        });
+    </script>
+</body>
+{% endblock content %}

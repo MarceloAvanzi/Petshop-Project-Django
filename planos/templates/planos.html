@@ -10,7 +10,7 @@
 				<li>1 Tosa (Completa ou Higiênica)</li>
 				<li>10% de desconto no terceiro banho</li>
 			</ul>
-			<a href="#" type="button">Assinar</a>
+			<button href="#" type="button">Assinar</button>
 		</div>
 
 		<div type="plan">
@@ -24,7 +24,7 @@
 				<li></li>
 				<li></li>
 			</ul>
-			<a href="#" type="button">Assinar</a>
+			<button href="#" type="button">Assinar</button>
 		</div>
 
 		<div type="plan">
@@ -37,8 +37,44 @@
 				<li>15% OFF em todos os produtos</li>
 				<li>Frete Grátis em qualquer compra na loja</li>
 			</ul>
-			<a href="#" type="button">Assinar</a>
+			<button href="#" type="button">Assinar</button>
 		</div>
 	</section>
 </div>
+
+<script>
+	var buttons = document.querySelectorAll("button");
+
+	// Abrir o modal ao clicar no botão
+	buttons.forEach((button) =>{ button.addEventListener('click', function () {
+
+			// inicia a instância do checkout
+			var checkout = new PagarMeCheckout.Checkout({
+				encryption_key: 'SUA ENCRYPTION KEY',
+				success: function (data) {
+					console.log(data);
+				},
+				error: function (err) {
+					console.log(err);
+				},
+				close: function () {
+					console.log('The modal has been closed.');
+				}
+			});
+
+			checkout.open({
+				amount: 1000,
+				customerData: 'true',
+				createToken: 'false',  // False pra ambiente dev
+				items: [{
+					id: '1',
+					title: 'ebook',
+					unit_price: 1500,
+					quantity: 1,
+					tangible: 'false'
+				}]
+			})
+		});
+	});
+</script>
 {% endblock content %}
