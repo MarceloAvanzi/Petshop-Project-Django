@@ -10,7 +10,7 @@
 				<li>1 Tosa (Completa ou Higiênica)</li>
 				<li>10% de desconto no terceiro banho</li>
 			</ul>
-			<button href="#" type="button">Assinar</button>
+			<button href="#" type="button1">Assinar</button>
 		</div>
 
 		<div type="plan">
@@ -24,7 +24,7 @@
 				<li></li>
 				<li></li>
 			</ul>
-			<button href="#" type="button">Assinar</button>
+			<button href="#" type="button2">Assinar</button>
 		</div>
 
 		<div type="plan">
@@ -37,44 +37,119 @@
 				<li>15% OFF em todos os produtos</li>
 				<li>Frete Grátis em qualquer compra na loja</li>
 			</ul>
-			<button href="#" type="button">Assinar</button>
+			<button href="#" type="button3">Assinar</button>
 		</div>
 	</section>
 </div>
 
 <script>
-	var buttons = document.querySelectorAll("button");
-
+	var button1 = document.querySelector("button[type=button1]");
 	// Abrir o modal ao clicar no botão
-	buttons.forEach((button) =>{ button.addEventListener('click', function () {
-
-			// inicia a instância do checkout
-			var checkout = new PagarMeCheckout.Checkout({
-				encryption_key: 'SUA ENCRYPTION KEY',
-				success: function (data) {
-					console.log(data);
-				},
-				error: function (err) {
-					console.log(err);
-				},
-				close: function () {
-					console.log('The modal has been closed.');
-				}
-			});
-
-			checkout.open({
-				amount: 1000,
-				customerData: 'true',
-				createToken: 'false',  // False pra ambiente dev
-				items: [{
-					id: '1',
-					title: 'ebook',
-					unit_price: 1500,
-					quantity: 1,
-					tangible: 'false'
-				}]
-			})
+	button1.addEventListener('click', function () {
+		// inicia a instância do checkout
+		var checkout = new PagarMeCheckout.Checkout({
+			encryption_key: 'SUA ENCRYPTION KEY',
+			success: function (data) {
+				console.log(data);
+				return data;
+			},
+			error: function (err) {
+				console.log(err);
+			},
+			close: function () {
+				console.log('The modal has been closed.');
+			}
 		});
+
+		checkout.open({
+			amount: 7999,
+			customerData: 'true',
+			reviewInformations: 'true',
+			postbackUrl: 'http://localhost:8000/planos/',
+			days: 30,
+			charges: null,
+			name: 'Plano Basic',
+			createToken: 'false',  // False pra ambiente dev
+			items: [{
+				id: '3',
+				title: 'Plano Basic',
+				quantity: 1,
+				tangible: 'false'
+			}]
+		})
+	});
+
+
+	var button2 = document.querySelector("button[type=button2]");
+	// Abrir o modal ao clicar no botão
+	button2.addEventListener('click', function () {
+		// inicia a instância do checkout
+		var checkout = new PagarMeCheckout.Checkout({
+			encryption_key: 'SUA ENCRYPTION KEY',
+			success: function (data) {
+				console.log(data);
+				console.log(data.customer);
+			},
+			error: function (err) {
+				console.log(err);
+			},
+			close: function () {
+				console.log('The modal has been closed.');
+			}
+		});
+
+		checkout.open({
+			amount: 11999,
+			customerData: 'true',
+			reviewInformations: 'true',
+			postbackUrl: 'http://localhost:8000/planos/',
+			days: 30,
+			charges: null,
+			name: 'Plano Standard',
+			createToken: 'false',  // False pra ambiente dev
+			items: [{
+				id: '3',
+				title: 'Plano Standard',
+				quantity: 1,
+				tangible: 'false'
+			}]
+		});
+	});
+
+
+	var button3 = document.querySelector("button[type=button3]");
+	// Abrir o modal ao clicar no botão
+	button3.addEventListener('click', function () {
+		// inicia a instância do checkout
+		var checkout = new PagarMeCheckout.Checkout({
+			encryption_key: 'SUA ENCRYPTION KEY',
+			success: function (data) {
+				console.log(data);
+			},
+			error: function (err) {
+				console.log(err);
+			},
+			close: function () {
+				console.log('The modal has been closed.');
+			}
+		});
+
+		checkout.open({
+			amount: 15999,
+			customerData: 'true',
+			reviewInformations: 'true',
+			postbackUrl: 'http://localhost:8000/planos/',
+			days: 30,
+			charges: null,
+			name: 'Plano Premium',
+			createToken: 'false',  // False pra ambiente dev
+			items: [{
+				id: '3',
+				title: 'Plano Premium',
+				quantity: 1,
+				tangible: 'false'
+			}]
+		})
 	});
 </script>
 {% endblock content %}
