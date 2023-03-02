@@ -51,6 +51,8 @@
 			encryption_key: 'SUA ENCRYPTION KEY',
 			success: function (data) {
 				console.log(data);
+				console.log(data.customer);
+				console.log('dadosPag',dadosPag);
 				return data;
 			},
 			error: function (err) {
@@ -79,7 +81,6 @@
 		})
 	});
 
-
 	var button2 = document.querySelector("button[type=button2]");
 	// Abrir o modal ao clicar no botão
 	button2.addEventListener('click', function () {
@@ -89,6 +90,7 @@
 			success: function (data) {
 				console.log(data);
 				console.log(data.customer);
+				console.log('dadosPag',dadosPag);
 			},
 			error: function (err) {
 				console.log(err);
@@ -125,6 +127,8 @@
 			encryption_key: 'SUA ENCRYPTION KEY',
 			success: function (data) {
 				console.log(data);
+				console.log(data.customer);
+				console.log('dadosPag',dadosPag);
 			},
 			error: function (err) {
 				console.log(err);
