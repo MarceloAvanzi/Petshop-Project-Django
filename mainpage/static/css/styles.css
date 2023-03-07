@@ -748,7 +748,7 @@ font-size: larger;
 }
 .editar-perfil input[name=apelido]{
     border-radius: 5px;
-    margin-left: 7.6%;
+    margin-left: 7.8%;
     margin-top: 1%;
     width: 250px;
     height: 25px;
@@ -769,14 +769,14 @@ font-size: larger;
 }
 .editar-perfil input[name=cpf]{
     border-radius: 5px;
-    margin-left: 10.7%;
+    margin-left: 10.2%;
     margin-top: 1%;
     width: 250px;
     height: 25px;
 }
 .editar-perfil input[name=data_nascimento]{
     border-radius: 5px;
-    margin-left: 0.8%;
+    margin-left: 2%;
     margin-top: 1%;
     width: 250px;
     height: 25px;
@@ -790,14 +790,14 @@ font-size: larger;
 }
 .editar-perfil input[name=password2]{
     border-radius: 5px;
-    margin-left: 2.4%;
+    margin-left: 3%;
     margin-top: 1%;
     width: 250px;
     height: 25px;
 }
 .editar-perfil input[type=submit]{
     border-radius: 5px;
-    margin-left: 37%;
+    margin-left: 38%;
     margin-top: 3%;
     width: 200px;
     height: 25px;
@@ -807,7 +807,7 @@ font-size: larger;
     margin-top: 0%;
 }
 .editar-perfil label[for=id_password2]{
-    margin-left: 21%;
+    margin-left: 35%;
     margin-top: 0%;
 }
 .editar-perfil li{

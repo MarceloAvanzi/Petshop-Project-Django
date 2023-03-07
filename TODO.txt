@@ -4,5 +4,3 @@ This is the TODO list so I don't forget the next time I code the project
 2-fazer a API de pagamento (fazer pela pagarme
     https://docs.pagar.me/v3/docs/overview-checkout
 )
-2-testar funcionamento do checkout da pagarme, e tambem verificar se vai ter que abrir um checkout para cada 
-botao de assinatura pra poder passar o valor do plano estaticamente, hoje coloquei os 3 no mesmo checkout

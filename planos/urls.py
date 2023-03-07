@@ -1,8 +1,8 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from .views import Assinaturas
+from .views import AssinaturasView
 
 
 urlpatterns=[
-    path('',login_required(Assinaturas.as_view()),name='planos.home'),
+    path('',login_required(AssinaturasView),name='planos.home'),
 ]

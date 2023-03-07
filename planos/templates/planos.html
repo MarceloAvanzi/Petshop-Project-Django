@@ -43,7 +43,6 @@
 </div>
 
 <script>
-
 	var button1 = document.querySelector("button[type=button1]");
 	// Abrir o modal ao clicar no botão
 	button1.addEventListener('click', function () {
@@ -53,7 +52,6 @@
 			success: function (data) {
 				console.log(data);
 				console.log(data.customer);
-				console.log('dadosPag',dadosPag);
 				return data;
 			},
 			error: function (err) {
