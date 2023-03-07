@@ -6,9 +6,14 @@ class DadosPagamentos(models.Model):
     # NumeroNoCartao = models.CharField(max_length=256,blank=False)
     # ValidadeCartao = models.DateField(blank=False)
     # cvv = models.IntegerField(blank=False)
-    Plano = models.CharField(max_length=256,blank=False)
-    Banhos = models.IntegerField(blank=False)
-    Tosas = models.IntegerField(blank=False)
+    Plans = (
+        ('Basic', ('Basic')),
+        ('Standard', ('Standard')),
+        ('Premium', ('Premium')),
+    )
+    Planos = models.BooleanField(choices=Plans ,max_length=256, blank=True)
+    Banhos = models.IntegerField(default=0)
+    Tosas = models.IntegerField(default=0)
     User = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
