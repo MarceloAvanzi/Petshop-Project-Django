@@ -1,6 +1,3 @@
 This is the TODO list so I don't forget the next time I code the project
 
 
-2-fazer a API de pagamento (fazer pela pagarme
-    https://docs.pagar.me/v3/docs/overview-checkout
-)
